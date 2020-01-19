@@ -1,0 +1,24 @@
+GET http://localhost:3000/devs
+
+###
+
+POST http://localhost:3000/devs
+Content-Type: application/json
+
+{
+    "github_username": "diego3g",
+    "techs": "ReactJS, React Native, Node.js",
+    "latitude": -20.1726388,
+    "longitude": -44.9159928
+}
+
+###
+
+DELETE http://localhost:3000/devs/
+
+###
+
+GET http://localhost:3000/search
+    ?latitude=-20.1726388
+    &longitude=-44.9159928
+    &techs=ReactJS,%20VueJS
