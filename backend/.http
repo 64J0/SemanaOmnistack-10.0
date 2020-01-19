@@ -1,8 +1,8 @@
-GET http://localhost:3000/devs
+GET http://localhost:3333/devs
 
 ###
 
-POST http://localhost:3000/devs
+POST http://localhost:3333/devs
 Content-Type: application/json
 
 {
@@ -14,11 +14,11 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:3000/devs/
+DELETE http://localhost:3333/devs/
 
 ###
 
-GET http://localhost:3000/search
+GET http://localhost:3333/search
     ?latitude=-20.1726388
     &longitude=-44.9159928
     &techs=ReactJS,%20VueJS

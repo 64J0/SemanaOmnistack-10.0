@@ -1,12 +1,14 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
+const cors = require('cors');
 
 const routes = require('./routes');
 const dotenv = require('dotenv');
 dotenv.config({ path: path.resolve(__dirname, './.env') });
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 app.use('/', routes);
 
@@ -23,6 +25,6 @@ db.on('connected', () => {
     console.log('DB conectado!');
 });
 
-app.listen(3000, () => {
-    console.log("Aplicação rodando na porta 3000");
+app.listen(3333, () => {
+    console.log("Aplicação rodando na porta 3333");
 });
