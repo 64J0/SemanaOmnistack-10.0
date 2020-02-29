@@ -6,7 +6,7 @@ module.exports = {
     async index(req, res) {
         // Buscar todos os devs um raio de 10km
         // Filtrar por tecnologias
-        const { latitude, longitude, techs } = request.query;
+        const { latitude, longitude, techs } = req.query;
         const techsArray = parseStringAsArray(techs);
         const devs = await Dev.find({
             techs: {
