@@ -3,11 +3,19 @@ const mongoose = require('mongoose');
 const path = require('path');
 const cors = require('cors');
 
+const http = require('http');
+
 const routes = require('./routes');
+const { setupWebSocket } = require('./websocket');
+
 const dotenv = require('dotenv');
 dotenv.config({ path: path.resolve(__dirname, './.env') });
 
 const app = express();
+const server = http.Server(app);
+
+setupWebSocket(server);
+
 app.use(cors());
 app.use(express.json());
 app.use('/', routes);
@@ -25,6 +33,6 @@ db.on('connected', () => {
     console.log('DB conectado!');
 });
 
-app.listen(3333, () => {
+server.listen(3333, () => {
     console.log("Aplicação rodando na porta 3333");
 });
